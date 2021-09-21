@@ -1,8 +1,13 @@
-package Aula02;
+package Aula_02;
 
 import java.util.*;;
-
-public class Ejercicio001 {
+/*
+ * Ejercicio - E001 
+ * Author: Nohelia Estefhania Tacca Apaza
+ * Description: Counting Divisors
+ * Date	  : 20/09/2021
+ */
+public class E001_CountDivisors {
 	public static void main(String[] args) {
 		Scanner s= new Scanner (System.in);
 		int n, x, count=0;
@@ -17,7 +22,7 @@ public class Ejercicio001 {
 			if (numero % x==0)
 		count++;	 
 		}
-		System.out.print(count) ; 
+		System.out.print(x + "es divisor de " + count + " numeros") ; 
 	}
 }
 
