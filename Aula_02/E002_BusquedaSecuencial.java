@@ -10,23 +10,24 @@ import java.util.*;
 
 public class E002_BusquedaSecuencial {
 	public static void main(String[] arg) {
-		int n=0;
+		int n = 0;
 		Scanner s = new Scanner(System.in);
 		int searched;
-		int nums [] =  new int [100];
+		int nums[] = new int[100];
 
-		for(int i = 0; i <= nums.length-1; i++) {
-			nums[i]= n;
-			n = n+3;
+		for (int i = 0; i <= nums.length - 1; i++) {
+			nums[i] = n;
+			n = n + 3;
 			System.out.println(nums[i]);
 		}
 
 		System.out.println("El número buscado es? :");
-		searched=s.nextInt();
+		searched = s.nextInt();
 		System.out.println(BusquedaSecuencial(nums, searched));
 	}
-	private static boolean BusquedaSecuencial(int[]nums, int t) {		 
-		for(int i = 0; i <= nums.length-1; i++) {
+
+	private static boolean BusquedaSecuencial(int[] nums, int t) {
+		for (int i = 0; i <= nums.length - 1; i++) {
 			if (nums[i] == t) {
 
 				return true;
@@ -35,5 +36,3 @@ public class E002_BusquedaSecuencial {
 		return false;
 	}
 }
-
-
