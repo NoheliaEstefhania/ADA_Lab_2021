@@ -10,7 +10,7 @@ import java.util.*;
 
 public class E004_orden_ascendente {
 	public static void main(String[] args) {
-		Scanner s = new Scanner (System.in);
+		Scanner s = new Scanner(System.in);
 
 		System.out.println("ORDEN ASCENDENTE\n");
 
@@ -21,32 +21,32 @@ public class E004_orden_ascendente {
 		b = s.nextInt();
 		c = s.nextInt();
 
-		System.out.println("lista inicial : "+ a + " - "+b +" - "+ c);
+		System.out.println("lista inicial : " + a + " - " + b + " - " + c);
 		int mayor = 0, medio = 0, menor = 0;
 
-		if(a > b && a > c) {
+		if (a > b && a > c) {
 			mayor = a;
-			
+
 		} else if (b > a && b > c) {
 			mayor = b;
 
 		} else {
 			mayor = c;
-			
+
 		}
-		
+
 		if (a < b && a < c) {
 			menor = a;
-			
+
 		} else if (b < a && b < c) {
 			menor = b;
 		}
-		
+
 		else {
 			menor = c;
 		}
-		
-		medio = (a + b + c)-(mayor + menor);
+
+		medio = (a + b + c) - (mayor + menor);
 
 		System.out.println("lista ordenada ascendentemente : --> " + menor + " - " + medio + " - " + mayor);
 	}
