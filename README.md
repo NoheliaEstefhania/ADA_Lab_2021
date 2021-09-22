@@ -2,8 +2,8 @@
 
 #### Presentado por: Nohelia Estefhania Tacca Apaza
 
-#### Profesor: Alex
+#### Profesor: Alex Josue Florez Farfan
 
-### Grupo A - 2019
+### Grupo B - 2019
 
 
