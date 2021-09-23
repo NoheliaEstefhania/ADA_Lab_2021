@@ -12,16 +12,19 @@ import java.util.Timer;
 public class E004_BusquedaSecuencial {
 
 	public static void main(String[] arg) {
-		Scanner s = new Scanner(System.in);
-		int[] nums = crearArray();
-		System.out.println("Ingrese el número que está buscando:");
-		int searched = s.nextInt();
-		timer(nums, searched);
+		int n = 10;
+		while (n <= 100000000) {
+			int[] array = crearArray(n);
+			System.out.println("\ncantidad de elementos en el array " + n);
+			timer(array, n - 1);
+			n = n * 10;
+
+		}
 	}
 
-	private static boolean BusquedaSecuencial(int[] nums, int t) {
-		for (int i = 0; i <= nums.length - 1; i++) {
-			if (nums[i] == t) {
+	private static boolean BusquedaSecuencial(int[] array, int t) {
+		for (int i = 0; i <= array.length - 1; i++) {
+			if (array[i] == t) {
 
 				return true;
 			}
@@ -29,26 +32,22 @@ public class E004_BusquedaSecuencial {
 		return false;
 	}
 
-	private static int[] crearArray() {
-		Scanner s = new Scanner(System.in);
-		System.out.println("Ingrese la cantidad de números del array :");
-		int n = s.nextInt();
+	private static int[] crearArray(int n) {
 		int x = 0;
 		int[] array = new int[n];
 		for (int i = 0; i <= array.length - 1; i++) {
 			array[i] = x;
 			x = x + 1;
-
 		}
+
 		return array;
 	}
 
-	private static void timer(int nums[], int searched) {
-		double inicio = System.currentTimeMillis();
-		System.out.println("Se encuentra " + searched + " ? ");
-		System.out.println(BusquedaSecuencial(nums, searched));
-		double fin = System.currentTimeMillis();
-		System.out.println("Se demoro: " + (fin - inicio) + "milisegundos");
+	private static void timer(int array[], int searched) {
+		double inicio = System.nanoTime();
+		System.out.println("¿ Se encuentra " + searched + " ? " + BusquedaSecuencial(array, searched));
+		double fin = System.nanoTime();
+		System.out.println("Se demoro: " + (fin - inicio) + " nanosegundos");
 	}
 
 }

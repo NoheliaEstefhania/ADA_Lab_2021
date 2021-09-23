@@ -12,11 +12,13 @@ import java.util.Scanner;
 public class E005_InsertionSortTimer {
 	public static void main(String[] arg) {
 		Scanner s = new Scanner(System.in);
-
-		int[] nums = crearArray();
-
-		timer(nums);
-
+		int n = 10;
+		while (n <= 100000000) {
+			int[] array = crearArray(n);
+			System.out.println("\ncantidad de elementos en el array " + n);
+			timer(array);
+			n = n * 10;
+		}
 	}
 
 	// metodo java de ordenacion por insercion
@@ -33,19 +35,17 @@ public class E005_InsertionSortTimer {
 		}
 	}
 
-	private static int[] crearArray() {
+	private static int[] crearArray(int n) {
 		Scanner s = new Scanner(System.in);
-		System.out.println("Ingrese la cantidad de números del array :");
-		int n = s.nextInt();
-		System.out.println("--------------------");
-		System.out.println("Los números :");
-		System.out.println("--------------------");
+		//System.out.println("--------------------");
+		//System.out.println("Los números :");
+		//System.out.println("--------------------");
 		int x;
 		int[] array = new int[n];
 		for (int i = 0; i <= array.length - 1; i++) {
 			Random rnd = new Random();
 			x = (int) (rnd.nextDouble() * 100 + 1);
-			System.out.println(x);
+			//System.out.println(x);
 			array[i] = x;
 		}
 		return array;
@@ -53,15 +53,15 @@ public class E005_InsertionSortTimer {
 
 	private static void timer(int nums[]) {
 		double inicio = System.currentTimeMillis();
-		System.out.println("----------------------");
-		System.out.println("Números ordenados :");
-		System.out.println("----------------------");
+		//System.out.println("----------------------");
+		//System.out.println("Números ordenados :");
+		//System.out.println("----------------------");
 		insertionAlgorithm(nums);
-		for (int i = 0; i < nums.length; i++)// muestra el ordenamiento de menor a mayor
-			System.out.println(nums[i] + " ");
+		//for (int i = 0; i < nums.length; i++)// muestra el ordenamiento de menor a mayor
+			//System.out.println(nums[i] + " ");
 		double fin = System.currentTimeMillis();
 		System.out.println("--------------------");
-		System.out.println("Se demoro: " + (fin - inicio) + "milisegundos");
+		System.out.println("Se demoro: " + (fin - inicio) + " milisegundos");
 		System.out.println("--------------------");
 	}
 }
