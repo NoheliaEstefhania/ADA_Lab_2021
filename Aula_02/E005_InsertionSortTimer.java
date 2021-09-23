@@ -37,9 +37,7 @@ public class E005_InsertionSortTimer {
 
 	private static int[] crearArray(int n) {
 		Scanner s = new Scanner(System.in);
-		//System.out.println("--------------------");
 		//System.out.println("Los números :");
-		//System.out.println("--------------------");
 		int x;
 		int[] array = new int[n];
 		for (int i = 0; i <= array.length - 1; i++) {
@@ -53,12 +51,10 @@ public class E005_InsertionSortTimer {
 
 	private static void timer(int nums[]) {
 		double inicio = System.currentTimeMillis();
-		//System.out.println("----------------------");
 		//System.out.println("Números ordenados :");
-		//System.out.println("----------------------");
 		insertionAlgorithm(nums);
 		//for (int i = 0; i < nums.length; i++)// muestra el ordenamiento de menor a mayor
-			//System.out.println(nums[i] + " ");
+		//   System.out.println(nums[i] + " ");
 		double fin = System.currentTimeMillis();
 		System.out.println("--------------------");
 		System.out.println("Se demoro: " + (fin - inicio) + " milisegundos");
