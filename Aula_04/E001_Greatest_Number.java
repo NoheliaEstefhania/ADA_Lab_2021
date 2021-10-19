@@ -3,7 +3,7 @@ package Aula_04;
 import java.util.*;
 
 /*
- * Ejercicio - E003
+ * Ejercicio - E001
  * Author: Nohelia Estefhania Tacca Apaza
  * Description: 
  * Date	  : 18/10/2020
