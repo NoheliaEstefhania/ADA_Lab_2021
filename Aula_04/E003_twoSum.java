@@ -6,12 +6,11 @@ import java.util.*;
  * Ejercicio - E003
  * Author: Nohelia Estefhania Tacca Apaza
  * Description: 
- * Date	  : 18/10/2020
+ * Date	  : 18/10/2021
  */
 public class E003_twoSum {
 	public static void main(String[] args) {
 		int n;
-		int count = 0;
 		Scanner s = new Scanner(System.in);
 		System.out.println("Ingrese n:");
 		n = s.nextInt();
@@ -28,7 +27,7 @@ public class E003_twoSum {
 		System.out.println("-------------------------");
 	}
 
-	// devuelve true si es dos números del array suman 10
+	// devuelve true si dos números del array suman 10
 	public static boolean twoSum(int[] array) {
 		for (int i = 0; i < array.length; i++) {
 			for (int j = 0; j < array.length; j++) {
