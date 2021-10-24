@@ -5,7 +5,8 @@ import java.util.*;
 /*
  * Ejercicio - E001
  * Author: Nohelia Estefhania Tacca Apaza
- * Description: 
+ * Description: Mayor de un arreglo de numeros 
+ * Complexity: O(n) 
  * Date	  : 18/10/2021
  */
 

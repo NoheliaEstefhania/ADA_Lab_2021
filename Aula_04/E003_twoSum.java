@@ -5,7 +5,8 @@ import java.util.*;
 /*
  * Ejercicio - E003
  * Author: Nohelia Estefhania Tacca Apaza
- * Description: 
+ * Description: Encontrar 2 numeros en un arreglo que sumen 10. 
+ * Complexity: O(n²)
  * Date	  : 18/10/2021
  */
 public class E003_twoSum {
@@ -27,7 +28,7 @@ public class E003_twoSum {
 		System.out.println("-------------------------");
 	}
 
-	// devuelve true si dos números del array suman 10
+	// devuelve true si al menos dos números del array suman 10
 	public static boolean twoSum(int[] array) {
 		for (int i = 0; i < array.length; i++) {
 			for (int j = 0; j < array.length; j++) {

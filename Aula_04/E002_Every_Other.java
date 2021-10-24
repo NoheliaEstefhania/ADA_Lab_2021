@@ -5,7 +5,7 @@ import java.util.*;
 /*
  * Ejercicio - E002
  * Author: Nohelia Estefhania Tacca Apaza
- * Description: 
+ * Description: Every Other
  * Question: What's the time complexity of this code?
  * Answer: The time complexity is O(n²) (complejidad cuadrática)
  * Date	  : 23/10/2021
