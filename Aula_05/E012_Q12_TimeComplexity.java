@@ -27,13 +27,13 @@ public class E012_Q12_TimeComplexity {
 	//
 
 	public static void twoNumbers(int n) {
-		// __ ____
-		for (int i = 0; i < n; i++) {// |= O(n) __ | (1)
-			for (int j = 1; j < n; j = j * 2) {// | | (2)
-				// statement |= O(log_2(n)) |= O(n) * O(log_2(n)) (3)
-				System.out.println(i + " - " + j); // = O(1)| |= O(nlog_2(n))
-			} // __| |
-		} // __| ____|Time complexity = O(nlog(n))
+		//				 			      __ 			    ____
+		for (int i = 0; i < n; i++) {//					|= O(n)  __       		| (1)
+			for (int j = 1; j < n; j = j * 2) {// 				   | 			| (2)
+				// statement 						   |= O(log_2(n)) 	|= O(n) * O(log_2(n)) (3)
+				System.out.println(i + " - " + j); // = O(1)		   | 			|= O(nlog_2(n))
+			} // 						      	         __| 			|
+		} // 							      __| 		    	    ____|Time complexity = O(nlog(n))
 	}//
 }
 
