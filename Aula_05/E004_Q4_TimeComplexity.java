@@ -27,12 +27,12 @@ public class E004_Q4_TimeComplexity {
 	//muestra los pares de numeros que se pueden formar con los numeros entre 0 y n-1
 
 	public static void twoNumbers(int n) {
-		//								  __						____
-		for (int i = 0; i < n; i++) {//		|= O(n)	  __				|
-			for (int j = 0; j < n; j++) {//				|				|
-			//statement									|= O(1) * 0(n)	|= O(n) * 0(n)
-			System.out.println(i + " - " + j);	//= O(1)|= O(n)			|= O(n²)
-			}//										  __|				|
-		}   //							  __|						____|Time complexity = O(n²)
+		//							  __				    ____
+		for (int i = 0; i < n; i++) {//				    |= O(n)   __			|
+			for (int j = 0; j < n; j++) {//					|			|
+			//statement							|= O(1) * 0(n)		|= O(n) * 0(n)
+			System.out.println(i + " - " + j);	//= O(1)		|= O(n)			|= O(n²)
+			}//						      	      __|			|
+		}   //							  __|				    ____|Time complexity = O(n²)
 	}//																	
 }	
