@@ -28,9 +28,9 @@ public class E009_Q9_TimeComplexity {
 
 	public static void rootMethod(int n) {
 		
-		for (int i = 0; i * i < n; i++) {//		|O(sqrt(n))	|= O(1) * 0(sqrt(n))
+		for (int i = 0; i * i < n; i++) {//					|O(sqrt(n))		|= O(1) * 0(sqrt(n))
 			//statement							|			|= O(sqrt(n))
-			System.out.println(i);	 //	= O(1)	|			|
+			System.out.println(i);	 //	= O(1)				|			|
 		}   //									|			|Time complexity = O(sqrt(n))					
 	}
 }	
