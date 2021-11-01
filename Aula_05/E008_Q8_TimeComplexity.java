@@ -28,9 +28,9 @@ public class E008_Q8_TimeComplexity {
 
 	public static void entreDos(int n) {
 		
-		for (int i = n; i >= 1; i = i/2) {//	|O(2^(n))	|= O(1) * 0(2^(n))
+		for (int i = n; i >= 1; i = i/2) {//					|O(2^(n))		|= O(1) * 0(2^(n))
 			//statement							|			|= O(2^(n))
-			System.out.println(i);	 //	= O(1)	|			|= O(log_2(n))
+			System.out.println(i);	 //	= O(1)				|			|= O(log_2(n))
 		}   //									|			|Time complexity = O(log_2(n))					
 	}
 }	
@@ -39,13 +39,19 @@ public class E008_Q8_TimeComplexity {
   	i       
 	------------------------
 	n
+	------------------------
 	n / 2
+	------------------------
 	n / 2^2
+	------------------------
 	n / 2^3
+	------------------------
 	.    
 	.    
-	.    
+	.
+	------------------------
 	n / 2^k
+	------------------------
 	
 	Assume that i < 1
 	Therefore n / 2^k < 1
