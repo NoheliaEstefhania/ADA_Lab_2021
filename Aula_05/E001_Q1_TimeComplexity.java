@@ -29,9 +29,9 @@ public class E001_Q1_TimeComplexity {
 	
 	public static void numberListAsc(int n) {
 
-		for (int i = 0; i < n; i++) {//			|O(n)	|= O(1) * 0(n)
+		for (int i = 0; i < n; i++) {//						|O(n)		|= O(1) * 0(n)
 			//statement							|		|= O(n)
-			System.out.println(i);	 //	= O(1)	|		|
+			System.out.println(i);	 //	= O(1)				|		|
 		}   //									|		|Time complexity = O(n)
 	}
 }
