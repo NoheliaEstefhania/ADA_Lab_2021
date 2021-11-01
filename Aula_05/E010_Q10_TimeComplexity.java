@@ -28,15 +28,15 @@ public class E010_Q10_TimeComplexity {
 	//muestra la lista de numeros desde 0 hasta n-1, n veces 
 	
 	public static void numberListAsc(int n) {
-			//										   _						____		
-		for (int i = 0; i < n; i++) {//			|O(n)	|= O(1) * 0(n)				|
-			//statement							|		|= O(n)						|= O(n) + O(n)
-			System.out.println(i);	 //	= O(1)	|		|							|		
-		}   //									|	   _|Time complexity = O(n)		|= O(2n)
-			//										   _							|
-		for (int i = 0; i < n; i++) {//			|O(n)   |= O(1) * 0(n)				|= O(n)
-			//statement							|		|= O(n)						|
-			System.out.println(i);	 //	= O(1)	|		|							|Time complexity = O(n)
-		}   //									|	   _|Time complexity = O(n)	 ___|
+			//						       _			  	    ____		
+		for (int i = 0; i < n; i++) {//			|O(n)		|= O(1) * 0(n)				|
+			//statement				|		|= O(n)					|= O(n) + O(n)
+			System.out.println(i);	 //	= O(1)	|		|					|		
+		}   //						|	       _|Time complexity = O(n)			|= O(2n)
+			//						       _					|
+		for (int i = 0; i < n; i++) {//			|O(n)   	|= O(1) * 0(n)				|= O(n)
+			//statement				|		|= O(n)					|
+			System.out.println(i);	 //	= O(1)	|		|					|Time complexity = O(n)
+		}   //						|	       _|Time complexity = O(n)	     	     ___|
 	}
 }
