@@ -29,9 +29,9 @@ public class E002_Q2_TimeComplexity {
 	
 	public static void numberListDesc(int n) {
 		
-		for (int i = n; i > 0; i--) {//			|O(n)	|= O(1) * 0(n)
-			//statement							|		|= O(n)			
+		for (int i = n; i > 0; i--) {//			|O(n)		|= O(1) * 0(n)
+			//statement				|		|= O(n)			
 			System.out.println(i);	 //	= O(1)	|		|
-		}   //									|		|Time complexity = O(n)
+		}   //						|		|Time complexity = O(n)
 	}
 }
