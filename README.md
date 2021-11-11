@@ -2,9 +2,13 @@
 
 # Análisis y diseño de algoritmos
 
-#### Presentado por: Nohelia Estefhania Tacca Apaza
+#### Presentado por: 
 
-#### Profesor: Alex Josue Florez Farfan
+#####- Peña Rojas, Breyson Piero
+#####- Tacca Apaza, Nohelia Estefhania
+#####- Tapara Quispe, Fabiola Grissel
+
+#### Profesora: Aurea Rossy Soriano Vargas
 
 ### Grupo B - 2021
 
