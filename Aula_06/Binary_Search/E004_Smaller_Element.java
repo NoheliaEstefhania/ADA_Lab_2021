@@ -3,11 +3,11 @@ package Binary_Search;
 import java.util.*;
 
 /*
- * Ejercicio - E003
+ * Ejercicio - E004
  * Author		: Nohelia Estefhania Tacca Apaza
- * Description	: Binary Search algorithm
+ * Description		: Binary Search algorithm
  * Question		: Encuentre el menor elemento del array ordenado rotado (desplazado)
- 			      compare un elemento del medio con el primer o el último elemento
+ 			  compare un elemento del medio con el primer o el último elemento
  * Date	  		: 08/11/2020
  */
 
