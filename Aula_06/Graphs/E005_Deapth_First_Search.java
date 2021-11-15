@@ -9,39 +9,37 @@ package Graphs;
 
 public class E005_Deapth_First_Search {
 	public static void main(String[] args) {
-		GraphLink<String> g = new GraphLink<String>();
+		GraphLink<Integer> g = new GraphLink<Integer>();
 
-		g.insertVertex("A");
+		g.insertVertex(1);
 		System.out.println(g);
-		g.insertVertex("aqp");
-		g.insertVertex("cusco");
+		g.insertVertex(2);
+		g.insertVertex(3);
 		System.out.println(g);
-		g.insertVertex("piura");
+		g.insertVertex(12);
 		System.out.println(g);
-		g.insertVertex("tarapoto");
+		g.insertVertex(19);
 		System.out.println(g);
-		g.insertVertex("libertad");
+		g.insertVertex(5);
 		System.out.println(g);
-		g.insertVertex("ucayali");
+		g.insertVertex(20);
 
-		g.insertEdge("lima", "aqp");
+		g.insertEdge(8, 2);
 		System.out.println(g);
-		g.insertEdge("cusco", "aqp");
+		g.insertEdge(3, 2);
 		System.out.println(g);
-		g.insertEdge("piura", "lima");
+		g.insertEdge(12, 8);
 		System.out.println(g);
-		g.insertEdge("cusco", "lima");
+		g.insertEdge(2, 8);
 		System.out.println(g);
-		g.insertEdge("piura", "tarapoto");
+		g.insertEdge(12, 19);
 
 		System.out.println("----------------------------");
 
 		System.out.println(g);
 		System.out.println("probando DFS: ");
-		g.DFS("lima");
-		System.out.println(g);
-		System.out.println(" ");
-		g.DFS("tarapoto");
+
+		g.DFS(19);
 		System.out.println(g);
 	}
 }
