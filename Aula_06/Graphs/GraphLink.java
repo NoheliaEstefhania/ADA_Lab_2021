@@ -1,39 +1,80 @@
 package Graphs;
 
-public class GraphLink <E>{
+public class GraphLink<E> {
 	protected ListLinked<Vertex<E>> listVertex;
 
 	public GraphLink() { //creo una lista vacía 	
 		listVertex = new ListLinked<Vertex<E>>();//me genera una lista vacìa de aristas
 	}
 
-	public void insertVertex(E data) { //me envìa la informaciòn que me va a almacenar este vèrtice
-		Vertex<E> nuevo = new Vertex<E>(data); //primero genero
-		if (this.listVertex.search(nuevo) != null) { //si es diferente de nulo indica que ese vértice ya está dentro de la lista
+	public void insertVertex(E data) {
+		Vertex<E> nuevo = new Vertex<E>(data);
+		if (this.listVertex.search(nuevo) != null) {
 			System.out.println("Vertice ya fue insertado anteriormente ... ");
 		}
-		this.listVertex.insertFirst(nuevo);//en caso no esté, la inserto en mi lista, inserto mi vértice
+		this.listVertex.insertFirst(nuevo);
 		System.out.println("vertice " + nuevo + " insertado");
 	}
 
-	public void insertEdge(E verOri, E verDest) {	
-		Vertex<E> refOri = this.listVertex.search(new Vertex<E>(verOri));//buscamos en la lista de vértices el origen
-		Vertex<E> refDest = this.listVertex.search(new Vertex<E>(verDest));//también buscamos el destino
-		//en caso existan, nos devuelven la referencia del dato, 
-		System.out.println("Existen ambos vertices");
-		if (refOri == null || refDest == null) {//si alguna no existe no se puede realizar la inserción
+	public void insertEdge(E verOri, E verDest) {
+		this.insertEdge(verOri, verDest, -1);
+	}
+
+	public void insertEdge(E verOri, E verDest, int weight) {
+		Vertex<E> refOri = this.listVertex.search(new Vertex<E>(verOri));
+		Vertex<E> refDest = this.listVertex.search(new Vertex<E>(verDest));
+		if (refOri == null || refDest == null) {
 			System.out.println("Vertice origen y/o destino no existen ... ");
 			return;
 		}
-		if (refOri.listAdj.search(new Edge<E>(refDest))!= null) { //como ya existe, ahora evalúo la existencia de la arista en alguna de las dos aristas, en este caso en la del origen
+		if (refOri.listAdj.search(new Edge<E>(refDest)) != null) {
 			System.out.println("Arista ya fue insertada anteriormente ... ");
 			return;
 		}
-		//la inserto por duplicado
-		refOri.listAdj.insertFirst(new Edge<E>(refDest));//la inserto en el origen, cuyo destino es el destino
-		refOri.listAdj.insertFirst(new Edge<E>(refOri)); //la inserto en el destino, cuyo destino es el origen, si fuera un no dirigido, eliminamos esta lìnea
+		refOri.listAdj.insertFirst(new Edge<E>(refDest, weight));
+		refDest.listAdj.insertFirst(new Edge<E>(refOri, weight)); //la inserto en el destino, cuyo destino es el origen, si fuera un no dirigido, eliminamos esta lìnea
 	}
+
 	public String toString() {
 		return this.listVertex.toString();
+	}
+
+	private void initLabel() {
+		Node<Vertex<E>> aux = this.listVertex.first;
+		for (; aux != null; aux = aux.getNext()) {
+			aux.data.label = 0;
+			Node<Edge<E>> auxE = aux.data.listAdj.first;
+			for (; auxE != null; auxE = auxE.getNext())
+				auxE.data.label = 0;
+		}
+	}
+
+	//DFS
+	public void DFS(E data) {
+		Vertex<E> nuevo = new Vertex<E>(data);
+		Vertex<E> v = this.listVertex.search(nuevo);
+		if (v == null) {
+			System.out.println("Vertice no existe");
+			return;
+		}
+		initLabel();
+		DFSRec(v);
+	}
+	//DFS Recursivo
+	private void DFSRec(Vertex<E> v) {
+		v.label = 1;
+		System.out.print(v.data + ", ");
+		Node<Edge<E>> e = v.listAdj.first;
+		for (; e != null; e = e.getNext()) {
+			if (e.data.label == 0) {
+				Vertex<E> w = e.data.refDest;
+				if (w.label == 0) {
+					e.data.label = 1;
+					DFSRec(w);
+				} else {
+					e.data.label = 2;
+				}
+			}
+		}
 	}
 }
