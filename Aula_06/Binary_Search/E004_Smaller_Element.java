@@ -1,45 +1,39 @@
 package Binary_Search;
 
-import java.util.Scanner;
+import java.util.*;
 
 /*
  * Ejercicio - E003
  * Author		: Nohelia Estefhania Tacca Apaza
  * Description	: Binary Search algorithm
- * Question		: Encuentre el  primer  valor mayor o igual que  x
+ * Question		: Encuentre el menor elemento del array ordenado rotado (desplazado)
+ 			      compare un elemento del medio con el primer o el último elemento
  * Date	  		: 08/11/2020
  */
 
 public class E004_Smaller_Element {
 	public static void main(String[] arg) {
 		Scanner s = new Scanner(System.in);
-		int searched, position;
+
 		int[] nums = {6, 7, 9, 15, 19, 2, 3};
-		System.out.println("Ingrese el número que esté buscando:");
-		searched = s.nextInt();
-		position = busquedaBinaria(nums, searched);
-		if (position == -1)
-			System.out.println("No se encontró");
-		else
-			System.out.println("La posicion de " + searched + " es: " + position);
+		int menor = busquedaBinaria(nums);
+		System.out.println("El menor elemento del arreglo es : " + menor  );
+		
 	}
-	//devuelve la posición del siguiente número que se pone en la búsqueda
-	private static int busquedaBinaria(int[] nums, int searched1) {
-		int alta, baja, media;
+	//devuelve la posición del menor elemento del array
+	private static int busquedaBinaria(int[] nums) {
+		int alta, baja, media = -1 , menor = nums[0];
 		baja = 0; //L
 		alta = (nums.length - 1); //R
-		while (baja <= alta) {
+		while (baja < alta) {
 			media = (baja + ((alta - baja) / 2));
-			if (nums[media] == searched1) {
-				return media;
-			} else if (nums[media] < searched1) {
+			if (nums[media] < menor) {
+				alta = media - 1;
+			} else if (nums[media] > menor) {
 				baja = media + 1;
 
-			} else {
-				alta = media - 1;
 			}
 		}
-		return -1;
+		return nums[media];
 	}
-
 }
