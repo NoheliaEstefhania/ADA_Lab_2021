@@ -14,11 +14,11 @@ public class E002_DFS_ColordBoard{
 		print(matriz);
 	}
 
-	// Metodo para inicializacion de los valores de la tabla
 	public static void inicializar(String [][] matriz){
-	    for (int i = 0; i < matriz.length; i++) {
-	        for (int j = 0; j < matriz.length; j++) {
-	          if(i == 0 || j == 0 || i == 5 || j == 5 ){
+		int x = matriz.length;
+	    for (int i = 0; i < x; i++) {
+	        for (int j = 0; j < x; j++) {
+	          if(i == 0 || j == 0 || i == x-1 || j == x-1 ){
 	        	  matriz[i][j] = "#";
 	          }
 	          else {
@@ -26,12 +26,12 @@ public class E002_DFS_ColordBoard{
 	          }
 	        }
 	      }
-	    matriz[5][5] = "0";
-	    matriz[5][4] = "0";
-	    matriz[4][5] = "0";
-	    matriz[4][4] = "#";
+	    matriz[x-1][x-1] = "0";
+	    matriz[x-2][x-3] = "0";
+	    matriz[x-2][x-1] = "0";
+	    matriz[x-2][x-2] = "#";
 	    }
-	// Imprimiendo la tabla
+	// Imprimme la matriz
 	public static void print(String [][] matriz){
 		for (int i = 0; i < matriz.length; i++) {
 			System.out.println();
