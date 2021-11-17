@@ -3,7 +3,7 @@ package Graphs;
 /*
  * Ejercicio - E002
  * Author		: Nohelia Estefhania Tacca Apaza
- * Description	: Graphs
+ * Description		: Graphs
  * Date	  		: 08/11/2020
  */
 
