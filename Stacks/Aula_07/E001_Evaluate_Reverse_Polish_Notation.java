@@ -4,16 +4,15 @@ import java.util.Stack;
 
 /*
  * Ejercicio	: E001
- * Author		: Nohelia Estefhania Tacca Apaza
+ * Author	: Nohelia Estefhania Tacca Apaza
  * Description	: Staks
- * Details		: Reverse Polish Notation (RPN) Writing "2 3 +" instead of "2 + 3".
- 			  	  Valid operators are +, -, *, and /. Each operand may be an integer or another expression.
-
-				  Note that division between two integers should truncate toward zero.
-				  It is guaranteed that the given RPN expression is always valid. 
-				  That means the expression would always evaluate to a result, and there will not be any division 
-				  by zero operation
- * Date	  		: 15/11/2021
+ * Details	: Reverse Polish Notation (RPN) Writing "2 3 +" instead of "2 + 3".
+ 		  Valid operators are +, -, *, and /. Each operand may be an integer or another expression.
+		  Note that division between two integers should truncate toward zero.
+		  It is guaranteed that the given RPN expression is always valid. 
+		  That means the expression would always evaluate to a result, and there will not be any division 
+		  by zero operation
+ * Date	  	: 15/11/2021
  */
 
 public class E001_Evaluate_Reverse_Polish_Notation {
