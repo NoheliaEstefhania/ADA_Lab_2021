@@ -13,32 +13,40 @@ import java.util.*;
  */
 
 public class E005_Interview_Wait {
-	public static void main (String[]args){
-		Deque<Integer> deque = new LinkedList<Integer>();	
-		
-		int [] array = {4,-1,5,2,3};
-		for(int i = 0; i < array.length; i++){
-			deque.addLast(array[i]);
-		}
-		System.out.println("Ouput : " + interviewVait(deque));
+
+	public static void main(String[] args) {
+
+		int[] array = { 4, -1, 5, 2, 3 };
+
+		interviewVait(array);
 	}
 
-	private static int interviewVait(Deque<Integer> deque){
-		
+	/*
+	 * método que devuelve el tiempo que se debe de esperar para la entrevista,
+	 * haciendo uso de Deque
+	 */
+
+	private static void interviewVait(int[] array) {
+
+		Deque<Integer> deque = new LinkedList<Integer>();
+
+		for (int i = 0; i < array.length; i++) {
+			deque.addLast(array[i]);
+		}
+
 		System.out.println("Input : " + deque);
-		
-		int sms = 0;
-		while(true){
-			if(deque.peek() == -1 || deque.peekLast() == -1){
+
+		int time = 0;
+		while (true) {
+			if (deque.peek() == -1 || deque.peekLast() == -1) {
 				break;
 			}
-			if(deque.peek() < deque.peekLast()){
-				sms += deque.pollFirst();
-			}
-			else {
-				sms += deque.pollLast();
+			if (deque.peek() < deque.peekLast()) {
+				time += deque.pollFirst();
+			} else {
+				time += deque.pollLast();
 			}
 		}
-		return sms;
+		System.out.println("Ouput : " + time);
 	}
 }
