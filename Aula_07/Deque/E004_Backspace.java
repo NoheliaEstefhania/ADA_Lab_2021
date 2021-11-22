@@ -15,38 +15,32 @@ import java.util.*;
 
 public class E004_Backspace {
 
-	// Driver Code
 	public static void main(String[] args) {
-		String S = "abc#de##f#ghi#jklmn#op#";
-
-		// function call to print
-		// required answer
-		System.out.println(newString(S));
+		String txt = "abc#de##f#ghi#jklmn#op#";
+		
+		System.out.println("Ouput : " + backSpace(txt));
 	}
 
-	// This code is contributed
-	// by prerna saini
-	static String newString(String S) {
+	static String backSpace(String txt) {
+		System.out.println("input : " + txt);
+		
 		Stack<Character> q = new Stack<Character>();
-
-		for (int i = 0; i < S.length(); ++i) {
-			if (S.charAt(i) != '#')
-				q.push(S.charAt(i));
+		for (int i = 0; i < txt.length(); ++i) {
+			if (txt.charAt(i) != '#')
+				q.push(txt.charAt(i));
 			else if (!q.isEmpty())
 				q.pop();
 		}
-
-		// build final string
-		String ans = "";
+		
+		String message = "";
 
 		while (!q.isEmpty()) {
-			ans += q.pop();
+			message += q.pop();
 		}
 
-		// return final string
 		String answer = "";
-		for (int j = ans.length() - 1; j >= 0; j--) {
-			answer += ans.charAt(j);
+		for (int j = message.length() - 1; j >= 0; j--) {
+			answer += message.charAt(j);
 		}
 		return answer;
 	}
