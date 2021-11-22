@@ -1,6 +1,6 @@
 package Stacks;
 
-import java.util.Stack;
+import java.util.*;
 
 /*
  * Ejercicio	: E002
@@ -20,23 +20,24 @@ public class E002_MinimunAdd_toMake_Parenthesis_Valid {
 	public static void main(String[] args) {
 
 		String prueba1 = "())";
-		System.out.println(minAddToMakeValid(prueba1));
+		System.out.println("ouput : " + minAddToMakeValid(prueba1));
 		System.out.println("----");
 		String prueba2 =  "(((";
-		System.out.println(minAddToMakeValid(prueba2));
+		System.out.println("ouput : " + minAddToMakeValid(prueba2));
 		System.out.println("----");
 		String prueba3 = "(()))("; 
-		System.out.println(minAddToMakeValid(prueba3));
+		System.out.println("ouput : " + minAddToMakeValid(prueba3));
 		System.out.println("----");
 		String prueba4 = "()))(("; 
-		System.out.println(minAddToMakeValid(prueba4));
+		System.out.println("ouput : " + minAddToMakeValid(prueba4));
 		System.out.println("----");
 
 	}
-    public static int minAddToMakeValid(String S) {
-        int ans = 0, bal = 0;
-        for (int i = 0; i < S.length(); ++i) {
-            bal += S.charAt(i) == '(' ? 1 : -1;
+    public static int minAddToMakeValid(String txt) {
+        System.out.println("input : " + txt);
+    	int ans = 0, bal = 0;
+        for (int i = 0; i < txt.length(); ++i) {
+            bal += txt.charAt(i) == '(' ? 1 : -1;
             if (bal == -1) {
                 ans++;
                 bal++;
