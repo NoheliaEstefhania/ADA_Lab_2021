@@ -22,6 +22,8 @@ public class E006_Merge_k_Sorted_List {
 
 	}
 
+	//Devuelve la lista final de prioridad en función a los datos de la matriz inicial 
+	
 	public static void mergeKsortedList(int[][] matriz) {
 		PriorityQueue<Integer> pQueue = new PriorityQueue<Integer>();
 		int x = matriz.length;
@@ -43,6 +45,8 @@ public class E006_Merge_k_Sorted_List {
 		}		
 		System.out.println("\nOuput : " + newList);
 	}
+	
+	//imprime la matriz de listas
 	
 	public static void print(int [][] matriz){
 		for (int i = 0; i < matriz.length; i++) {

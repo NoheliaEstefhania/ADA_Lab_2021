@@ -18,30 +18,35 @@ public class E004_Backspace {
 	public static void main(String[] args) {
 		String txt = "abc#de##f#ghi#jklmn#op#";
 		
-		System.out.println("Ouput : " + backSpace(txt));
+		backSpace(txt);
 	}
-
-	static String backSpace(String txt) {
+	
+	//Imprime el mensaje final, quitando los caracteres correspondientes, dependiendo
+	//de la cantidad de # y el lugar donde se coloquen
+	
+	public static void backSpace(String txt) {
 		System.out.println("input : " + txt);
 		
-		Stack<Character> q = new Stack<Character>();
+		Deque<Character> q = new LinkedList<Character>();
+		
 		for (int i = 0; i < txt.length(); ++i) {
 			if (txt.charAt(i) != '#')
-				q.push(txt.charAt(i));
+				q.addFirst(txt.charAt(i));
 			else if (!q.isEmpty())
-				q.pop();
+				q.removeFirst();
 		}
 		
 		String message = "";
 
 		while (!q.isEmpty()) {
-			message += q.pop();
+			message += q.removeFirst();
 		}
 
+		//mensaje final
 		String answer = "";
 		for (int j = message.length() - 1; j >= 0; j--) {
 			answer += message.charAt(j);
 		}
-		return answer;
+		System.out.println("Ouput : " + answer);
 	}
 }
