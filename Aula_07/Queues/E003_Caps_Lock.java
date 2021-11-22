@@ -17,11 +17,11 @@ import java.util.*;
 public class E003_Caps_Lock {
 	public static void main(String[] args) {
 		String txt = "abc$d@ef$@g$";
-		System.out.println(txt);
-		capsLock(txt);
+		System.out.println("input : " + txt);
+		System.out.println(capsLock("ouput : " + txt));
 	}
 
-	public static void capsLock(String txt) {
+	public static String capsLock(String txt) {
 		Queue<Character> queue = enQueue(txt);
 		
 		String message = "";
@@ -44,7 +44,7 @@ public class E003_Caps_Lock {
 				buffer += letter;
 			}
 		}
-		System.out.print(message);
+		return message;
 	}
 
 	public static Queue<Character> enQueue(String txt) {
