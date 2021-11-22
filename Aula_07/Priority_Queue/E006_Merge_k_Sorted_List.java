@@ -15,8 +15,11 @@ public class E006_Merge_k_Sorted_List {
 	public static void main(String args[]) {
 
 		int[][] matriz = { { 1, 4, 5 }, { 1, 3, 4 }, { 2, 6 } };
-
+		System.out.println("Input : ");	
+		print(matriz);	
+		
 		mergeKsortedList(matriz);
+
 	}
 
 	public static void mergeKsortedList(int[][] matriz) {
@@ -27,6 +30,27 @@ public class E006_Merge_k_Sorted_List {
 				pQueue.add(matriz[i][j]);
 			}
 		}
-		System.out.println(pQueue.toString());
+			
+		ArrayList<Integer> newList = new ArrayList<Integer>();
+		
+		while(!pQueue.isEmpty()) {
+			
+			newList.add(pQueue.poll());
+			
+			if(!pQueue.isEmpty()) {
+							
+			}		
+		}		
+		System.out.println("\nOuput : " + newList);
+	}
+	
+	public static void print(int [][] matriz){
+		for (int i = 0; i < matriz.length; i++) {
+			System.out.println();
+			for (int j = 0; j < matriz[i].length; j++) {
+				System.out.print(" " + matriz[i][j]);
+			}
+		}
+		System.out.println();
 	}
 }
