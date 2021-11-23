@@ -33,17 +33,26 @@ public class E002_MinimunAdd_toMake_Parenthesis_Valid {
 		System.out.println("----");
 
 	}
-    public static int minAddToMakeValid(String txt) {
-        System.out.println("input : " + txt);
-    	int ans = 0, bal = 0;
-        for (int i = 0; i < txt.length(); ++i) {
-            bal += txt.charAt(i) == '(' ? 1 : -1;
-            if (bal == -1) {
-                ans++;
-                bal++;
+	
+	// Devuelve el número de paréntesis que no cumplen con las caracetrísticas requeridas "()"
+	
+    public static int minAddToMakeValid(String s) {
+    	System.out.println("Input : " + s);
+    	
+    	Stack<Character> st = new Stack();
+    	
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '(') {
+                st.push(s.charAt(i));
+            }
+            else if (!st.isEmpty() && s.charAt(i) == ')' && st.peek().equals('(')){
+            	st.pop();
+            }
+            else if (s.charAt(i) == ')') {
+            	st.push(s.charAt(i));
             }
         }
 
-        return ans + bal;
+        return st.size();
     }
 }
