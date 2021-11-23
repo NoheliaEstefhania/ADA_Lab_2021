@@ -14,18 +14,18 @@ import java.util.Scanner;
 public class E002_Search_square {
 	public static void main(String[] arg) {
 		Scanner s = new Scanner(System.in);
-		int searched, position;
+		int numEvaluado, position;
 		int[] nums = {0,1,2,3,4,5,6,7,8,9,10};
-		System.out.println("Ingrese el número que esté buscando:");
-		searched = s.nextInt();
-		position = busquedaBinaria(nums, searched);
+		numEvaluado = 8; 
+		position = busquedaBinaria(nums, numEvaluado);
 		if (position == -1)
-			System.out.println("--> " + searched + " No es un cuadrado ");
+			System.out.println("--> " + numEvaluado + " No es un cuadrado ");
 		else
-			System.out.println("--> " + searched + " Si es un cuadrado");
+			System.out.println("--> " + numEvaluado + " Si es un cuadrado");
 	}
 	//devuelve -1 si es que el número no se trata de un cuadrado
-	private static int busquedaBinaria(int[] nums, int searched1) {
+	private static int busquedaBinaria(int[] nums, int numEvaluado) {
+		System.out.println("El número evaluado es : " + numEvaluado);
 		int alta, baja, media;
 		baja = 0; //L
 		alta = (nums.length - 1); //R
@@ -33,9 +33,9 @@ public class E002_Search_square {
 		while (baja <= alta) {
 			media = (baja + ((alta - baja) / 2));
 			int nums_media = nums[media];
-			if (nums_media * nums_media == searched1) {
+			if (nums_media * nums_media == numEvaluado) {
 				return media;
-			} else if ((nums_media*nums_media) < searched1) {
+			} else if ((nums_media*nums_media) < numEvaluado) {
 				baja = media + 1;
 
 			} else {

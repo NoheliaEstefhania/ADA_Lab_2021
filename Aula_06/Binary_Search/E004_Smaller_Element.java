@@ -5,9 +5,9 @@ import java.util.*;
 /*
  * Ejercicio - E004
  * Author		: Nohelia Estefhania Tacca Apaza
- * Description		: Binary Search algorithm
+ * Description	: Binary Search algorithm
  * Question		: Encuentre el menor elemento del array ordenado rotado (desplazado)
- 			  compare un elemento del medio con el primer o el último elemento
+ 			      compare un elemento del medio con el primer o el último elemento
  * Date	  		: 08/11/2020
  */
 
@@ -15,7 +15,7 @@ public class E004_Smaller_Element {
 	public static void main(String[] arg) {
 		Scanner s = new Scanner(System.in);
 
-		int[] nums = {6, 7, 9, 15, 19, 2, 3};
+		int[] nums = {2, 3, 6, 7, 9, 15, 19};
 		int menor = busquedaBinaria(nums);
 		System.out.println("El menor elemento del arreglo es : " + menor  );
 		

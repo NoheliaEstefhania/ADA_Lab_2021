@@ -14,8 +14,7 @@ public class E001_Binary_Search {
 		Scanner s = new Scanner(System.in);
 		int searched, position;
 		int[] nums = {1,2,3,4,5,6,7,8,9,10};
-		System.out.println("Ingrese el número que esté buscando:");
-		searched = s.nextInt();
+		searched = 2; //position = 1
 		position = busquedaBinaria(nums, searched);
 		if (position == -1)
 			System.out.println("No se encontró");
@@ -24,6 +23,7 @@ public class E001_Binary_Search {
 	}
 	//devuelve 
 	private static int busquedaBinaria(int[] nums, int searched1) {
+		System.out.println("El número buscado es : " + searched1);
 		int alta, baja, media;
 		baja = 0; //L
 		alta = (nums.length - 1); //R
