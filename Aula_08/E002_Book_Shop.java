@@ -4,9 +4,9 @@ import java.util.*;
 
 /*
  * Ejercicio	: E002
- * Author		: Nohelia Estefhania Tacca Apaza
+ * Author	: Nohelia Estefhania Tacca Apaza
  * Description	: Book Shop
- * Date	  		: 29/11/2021
+ * Date	  	: 29/11/2021
  */
 
 public class E002_Book_Shop {
@@ -31,7 +31,8 @@ public class E002_Book_Shop {
 		}
 		System.out.println("\nOutput : " + matriz[nlibros][disponible]);
 	}
-
+	
+	//impresi√≥n de la matriz
 	public static void print(int[][] a) {
 		System.out.println("\n\t\t\t\t*****BOOK SHOP*****\n");
 		System.out.println("       0        1       2      3       4       5       6       7       8       9       10");
@@ -54,7 +55,7 @@ public class E002_Book_Shop {
 
 	}
 	
-	//ProgramaciÛn din·mica - algoritmo de la mochila
+	//devuelve la cantidad m√°xima de p√°ginas que podemos obtener con el dinero disponible
 	public static int[][] bookShop(int n, int M, int []price, int []pages) {
 		int [][] B = new int [n+1] [M+1];  
 		for (int i = 0; i < n; i++) { 
