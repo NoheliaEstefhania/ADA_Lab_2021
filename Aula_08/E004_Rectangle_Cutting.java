@@ -19,7 +19,7 @@ public class E004_Rectangle_Cutting {
 
 		int answer = minimumSquare(height, width);
 		
-		if (answer > 1) {
+		if (answer > 0) {
 			System.out.println("Output : " + (answer - 1 ));
 		}
 		else {

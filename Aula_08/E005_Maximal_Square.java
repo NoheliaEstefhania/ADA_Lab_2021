@@ -16,7 +16,7 @@ public class E005_Maximal_Square {
 				{'1','1','1','1','1'},
 				{'1','0','0','1','0'}};
 		
-		System.out.println(maximalSquare(matrix));
+		System.out.println("Output : " + maximalSquare(matrix));
 	}
 	
     public static int maximalSquare(char[][] matrix) {
