@@ -19,11 +19,11 @@ public class E003_Number_of_Longest_Increasing_Subsequence {
 		for (int i=0; i<nums.length; i++) {
 			System.out.print(nums[i] + " ");
 		}
-		System.out.println("\nOutput : " + numberOf_LIS(nums));
+		System.out.println("\nOutput : " + lengthOfLIS(nums));
 	}
 
 	// Devuelve el total de numeros que contiene la subsecuencia más larga creciente
-	public static int numberOf_LIS(int nums[]) {
+	public static int lengthOfLIS(int nums[]) {
 	    if(nums==null || nums.length==0)
 	        return 0;
 	 
@@ -43,5 +43,4 @@ public class E003_Number_of_Longest_Increasing_Subsequence {
 	 
 	   return result;
 	}
-
 }

@@ -1,4 +1,4 @@
-package Aula_008;
+package Aula_08;
 
 import java.util.*;
 
@@ -11,7 +11,9 @@ import java.util.*;
 
 public class E001_Unique_Path_II {
 	public static void main(String args[]) {
-		int[][] obstacleGrid = { { 0, 0, 0 }, { 0, 1, 0 }, { 0, 0, 0 } };
+		int[][] obstacleGrid = { { 0, 0, 0 }, 
+								{ 0, 1, 0 }, 
+								{ 0, 0, 0 } };
 		System.out.println("Input : ");	
 		print(obstacleGrid);	
 		System.out.println("\nOutput : " + uniquePathsII(obstacleGrid));
@@ -48,7 +50,7 @@ public class E001_Unique_Path_II {
             }
         }
         
-        // for spaces not at first row or first column
+        // espacios diferentes a la primera fila o columna
         for (int i = 1; i < height; i++) {
             for (int j = 1; j < width; j++) {
                 if (obstacleGrid[i][j] != 1) {
@@ -59,7 +61,6 @@ public class E001_Unique_Path_II {
         
         return paths[height - 1][width - 1];
     }
-
 	
 	//imprime la obstacleGrid de listas
 	

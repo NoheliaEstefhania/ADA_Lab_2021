@@ -3,9 +3,9 @@ package Aula_08;
 import java.util.*;
 
 /*
- * Ejercicio	: E001
+ * Ejercicio	: E002
  * Author		: Nohelia Estefhania Tacca Apaza
- * Description	: Unique Path II
+ * Description	: Book Shop
  * Date	  		: 29/11/2021
  */
 
@@ -14,11 +14,11 @@ public class E002_Book_Shop {
 		Scanner s = new Scanner(System.in); 
 		int n, M;
 		int [] price = {0,4,8,5,3};
-		int [] Cost = {0,5,12,8,1};
+		int [] pages = {0,5,12,8,1};
 		int [][] matriz;
 		n = 4; //cantidad de libros
 		M = 10; //dinero total disponible
-		matriz = bookShop(price, Cost, n, M);
+		matriz = bookShop(n, M, price, pages);
 		print(matriz);
 		System.out.println("\n El valor máximo a obtener es : " + matriz[n][M]);
 	}
@@ -46,7 +46,7 @@ public class E002_Book_Shop {
 	}
 	
 	//Programación dinámica - algoritmo de la mochila
-	public static int[][] bookShop(int []W, int []C, int n, int M) {
+	public static int[][] bookShop( int n, int M, int []W, int []C) {
 		int [][] B = new int [n+1] [M+1]; //creamos la matriz 
 		int w;
 		for(int i=0; i<=n; i++)//inicializamos la primera fila
@@ -66,27 +66,12 @@ public class E002_Book_Shop {
 	}
 	/* w: peso de mi mochila en ese momento
 	 * W[i]: volumen de mi i-ésimo elemento
-	 * c[i]: costo del i-ésimo elem.
-	 * B[i-1][w-W[i]]: el costo de mi mochila quitando el i-ésimo elemento
+	 * c[i]: pageso del i-ésimo elem.
+	 * B[i-1][w-W[i]]: el pages de mi mochila quitando el i-ésimo elemento
 	 * w - W[i]: para determinar si el i-ésimo elemento podría cver en la mochila
 	 * -------------------------------------------------------------------------------------------------
 	 * int [][]B : matriz de beneficios con valores
 	 * B[i][k]: la primera vez que entremos representará la máxima cantidad de la mochila
 	 * 
 	 */
-	public static boolean[] ObjSel(int []W, int [][]B, int n, int M){
-		boolean X[] = new boolean[n]; //nos dará cuáles seleccionamos y los que no
-		int i = n; 
-		int k = M;
-		while (i > 0 && k > 0 ){
-			if ( B[i][k] != B[i-1][k] ){ //si es que los beneficios son diferentes 
-				X[i-1] = true; 
-				k = k - W[i-1];
-			}
-			else
-				X[i-1] = false;
-			i--;
-		}
-		return X; //me devuelve un arreglo de ceros y unos, donde cero representa que el obj. no entra y 1 que sí
-	}
 }
