@@ -29,13 +29,13 @@ public class Solution_EveryStep {
 	}
 
 	public static int solution(int[] A, int[] B) {
-		// Si A es una lista vacÌa
+		// Si A es una lista vac√≠a
 		if (A.length == 0) {
-			return 0; //retornamos cero, porque si no hay segmentos, tampoco habr· segmentos
+			return 0; //retornamos cero, porque si no hay segmentos, tampoco habr√° segmentos
 		}
 		// Si A es una lista con un solo dato
 		if (A.length == 1) {
-			return 1; //retornamos uno, porque si solo hay un segmento, sÛlo habr· un segmento que no estar· superpuesto con otro
+			return 1; //retornamos uno, porque si solo hay un segmento, s√≥lo habr√° un segmento que no estar√° superpuesto con otro
 		}
 
 		//inicializamos los valores
@@ -50,7 +50,7 @@ public class Solution_EveryStep {
 			if (A[i] > finalOfActualSegment) {
 				System.out.println("\t--> " + A[i] + " > " + finalOfActualSegment);
 				count++;
-				System.out.println("\tQuiere decir que no se cruzar·n con el nuevo inicio, por lo tanto count se agregÛ en uno, entonces count = " + count);
+				System.out.println("\tQuiere decir que no se cruzar√°n con el nuevo inicio, por lo tanto count se agreg√≥ en uno, entonces count = " + count);
 				finalOfActualSegment = B[i];
 				System.out.println("----------------------------------------------------------");
 				System.out.println("\nFinal del segmento actual B["+ i + "] " + finalOfActualSegment);
