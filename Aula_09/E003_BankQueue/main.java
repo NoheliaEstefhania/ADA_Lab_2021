@@ -3,14 +3,13 @@ package E003_BankQueue;
 import java.util.*;
 
 class main {
+	static Scanner s = new Scanner(System.in);
 	public static void main(String[] args) {
-		maxResult();
-	}
-
-	public static void maxResult() {
-		Scanner s = new Scanner(System.in);
 		int N = s.nextInt();
 		int T = s.nextInt();
+		maxResult(N, T);
+	}
+	public static void maxResult(int N, int T) {
 		int totalCash = 0;
 		int aceptedPersons = 0;
 
