@@ -1,3 +1,5 @@
+package E002_Shortest_Routes_I;
+
 import java.io.*;
 import java.util.*;
 
@@ -14,7 +16,7 @@ public class solution {
     static long[] dd;
     public static void main(String[] args) throws IOException {
         PrintWriter pw = new PrintWriter(System.out);
-        int n = s.nextInt(); 
+        int n = s.nextInt();
         int m = s.nextInt();
         aa = new ArrayList[n];
         for (int i = 0; i < n; i++)
