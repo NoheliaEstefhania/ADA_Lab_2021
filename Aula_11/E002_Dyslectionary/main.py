@@ -1,3 +1,10 @@
+'''
+ Ejercicio	    : E002
+ Author		    : Nohelia Estefhania Tacca Apaza
+ Description	: Dyslectionary
+ Date	  		: 21/12/2021 
+'''
+
 def sort_and_print(longest, words):
     for w in sorted(words, key=lambda w: w[::-1]):
         padding = ' '*(longest-len(w))
